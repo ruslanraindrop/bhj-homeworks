@@ -2,10 +2,10 @@ const tasksInput = document.getElementById('task__input');
 const addButton = document.getElementById('tasks__add');
 const tasksList = document.getElementById('tasks__list');
 
-function taskAdd() {
+function taskAdd(event) {
+  event.preventDefault();
   if (tasksInput.value) {
-    event.preventDefault();
-    tasksList.insertAdjacentHTML('beforeEnd', `
+     tasksList.insertAdjacentHTML('beforeEnd', `
       <div class="task">
         <div class="task__title">
           ${tasksInput.value}
@@ -13,14 +13,12 @@ function taskAdd() {
         <a href="#" class="task__remove">&times;</a>
       </div>`
     );
-    tasksInput.value = '';
-  } else {
-    event.preventDefault();
+    tasksInput.value = '';   
   }
 }
 
-function taskAddFromKey(key) {
-  if (key.keyCode === 13) {
+function taskAddFromKey(event) {
+  if (event.keyCode === 13) {
     taskAdd();            
   }
 }
