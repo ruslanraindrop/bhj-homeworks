@@ -13,13 +13,14 @@ function taskAdd() {
         <a href="#" class="task__remove">&times;</a>
       </div>`
     );
-        
     tasksInput.value = '';
+  } else {
+    event.preventDefault();
   }
 }
 
 function taskAddFromKey(key) {
-  if (key.keyCode === 13) {
+  if ((key.keyCode === 13)) {
     taskAdd();            
   }
 }
