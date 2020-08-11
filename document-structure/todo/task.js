@@ -20,7 +20,7 @@ function taskAdd() {
 }
 
 function taskAddFromKey(key) {
-  if ((key.keyCode === 13)) {
+  if (key.keyCode === 13) {
     taskAdd();            
   }
 }
